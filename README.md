@@ -24,14 +24,24 @@ The Use Case for Patch Prompter is for a Creative Director who is looking for a 
 
 By using a system like this, the prompt data is always saved, easily accessible, including the details about what genAI model is used. The Patch Prompter features help with new improvements, but the prompt and model metadata should allow others not using Patch Prompter to recreate similar images using the basic ChatGPT UI as well.
 
-# AI Features to Be Implemented
-- List and briefly describe the AI components you plan to include:
-  - Prompt engineering
-  - Structured outputs
-  - Retrieval-Augmented Generation (RAG) and vector databases
-  - Evaluation frameworks
-  - Observability tools
-- Justify why each feature is relevant to your use case.
+# AI Features to Be Implemented (for MVP v0.1)
+- Prompt Engineering
+  - The MVP for Prompt Patcher is essentially a playground-like tool for experimenting with prompt engineering. While there are many browser-based playgrounds for testing text-based LLMs, it remains difficult, outside of a ComfyUI environment, to make creative decisions around genAI prompts. By adding a scoring system to image outputs, data will be collected around successful prompts, in hopes of improving them alongside the development of new models.
+- Observability Tools
+  - By using Langsmith, Prompt Patcher creates an additional layer for executives and creative directors to see how images are being built by teams. The intention is to break down individual creative language and seek out how genAI systems tokenize for diffusion model outputs. In practice, this will look like stakeholders shuffling through outputs and inspecting the prompts that create great imagery, even if it's not the ones ultimately selected by the direct users of the software.
+
+  The rationale behind leaning so hard into prompt engineering, is that the effectiveness of a creative service project is quite far downstream of the creative prompt. Evaluation, Observability and Structuring outputs offer the ability to drill deeper into the use of LLM prompts, but investing in the development of those systems may not prove a reasonable ROI when a better metric will be saving time and getting more and better images out of genAI models, without attempting to remove artists and creative pros from the process.
+  
+# Additional AI Features to be Implemented for Followup Releases
+
+- Evaluation Frameworks (v1.1)
+  - In future releases, metrics around "number of images generated per session" and "creative opportunity" and "project margin" may be able to feed back into the rubric for upvoting prompt components. Identifying that certain words lead to more profit on a project would be both hilarious and potentially meaningful.
+
+- Structured outputs (v1.2)
+  - While the intention is for a human-in-the-loop design for Patch Prompter, an additional agentic layer may be considered that would generate the patches automatically, by including the user-submitted ratings of prompt components to automatically generate patches that can be edited later.
+
+- Observability Tools (v2.0)
+  - In future releases, creating an opt-in to share more widely collected images from a genAI session may be included as part of the Prompt Patcher app.
 
 # Technical Approach
 - Outline how the system would be built at a high level.
