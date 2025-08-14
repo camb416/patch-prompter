@@ -9,11 +9,20 @@ While ComfyUI seeks to build complex and repeatable workflows for local genAI mo
 
 ## Impetus
 
-Right now, artists have their own workflows and use their own models and trial-and-error to build text prompts to realize their vision with genAI systems. These techniques, often shared online, sometimes do not even reflect the way the underlying systems work. These prompts could be better, and artists should have better information about what works, and what doesn't, when realizing their visions through these new techniques.
+Right now, commercial artists using AI in their creative process for large studios are using their own unique workflows, built from a patchwork of different models. They use trial-and-error to build text prompts to realize their vision with genAI systems. These techniques, often shared online, sometimes do not even reflect the way the underlying systems work. By collecting data about what components of prompts work on these systems, creatives can share their successes with artists and get more consistent results, ultimately leading to better outcomes for clients, faster.
 
 # Use Case & Workflow
-Identify the user or business workflow that would benefit from AI.
-Clearly explain how AI improves or automates part of this process.
+The Use Case for Patch Prompter is for a Creative Director who is looking for a specific look and wants to roll out a particular style to a large team of artists to match, and improve upon over the course of a project.
+
+1. The Creative Director uses Patch Prompter to generate a good "look" or example output for a project.
+2. The Creative Director uses an up and down-voting system to tag the outputs they got along the way to getting their look.
+3. The Creative Director downloads their best work, which both flags to the Patch Prompter database, that the image was downloaded (upvoting it highly). This download includes the prompt data in the image metadata.
+4. Artist teams can then import the example works, and reconstitue the "patch" that created the prompt. They use this node graph to generate new content for a campaign, adding their own prompt components and improvements along the way.
+5. The next time the Creative Director starts a project, they have new templates, and suggestions for prompt components (with example thumbnails) available so they never start from scratch again.
+6. Executive Creative Directors can also observe across projects what outputs are working, and what prompts are consistently used, using Langsmith observability.
+7. Stretch goal: Creative Directors can provide plain english descriptions of the project they're on, and receive suggested prompt components using RAG.
+
+By using a system like this, the prompt data is always saved, easily accessible, including the details about what genAI model is used. The Patch Prompter features help with new improvements, but the prompt and model metadata should allow others not using Patch Prompter to recreate similar images using the basic ChatGPT UI as well.
 
 # AI Features to Be Implemented
 - List and briefly describe the AI components you plan to include:
