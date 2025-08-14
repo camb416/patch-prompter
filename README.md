@@ -44,8 +44,12 @@ By using a system like this, the prompt data is always saved, easily accessible,
   - In future releases, creating an opt-in to share more widely collected images from a genAI session may be included as part of the Prompt Patcher app.
 
 # Technical Approach
-- Outline how the system would be built at a high level.
-- Mention tools, models, or services you would use (e.g., LLM APIs, vector stores, Cursor).
+
+## v0.1 MVP
+![System Architecture](system-arch.png)
+
+The base system will utilize Repl.it for building out the main back-end API and React using React Flow for the Front-End.
+
 
 # Example Prompts & Expected Outputs
 - Include 1–2 sample prompts and describe the kind of responses your app would generate.
