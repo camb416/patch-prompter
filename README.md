@@ -174,3 +174,9 @@ The simple measurement of success will be if artists find the app more useful th
 # Observability Plan
 Observability is built-in to the human-in-the-loop feedback design proposed. For more granular observability, Langsmith will be used to provide more granular observation of all the generated images, across all users. This may require a bit more structure in the metadata with the inputs and outputs than a typical app, but will be highly valuable to observe any unique or trending behaviors with users.
 
+# Development Estimate (v0.1)
+| resource | effort estimate |
+|--- | ---|
+| Lead Creative Technologist | 2 weeks for UX design and implementation |
+| Sr Engineer | 2 weeks for human-in-the-loop design and implementation + observability |
+|QA Specialist | 1 week QA planning and testing |
