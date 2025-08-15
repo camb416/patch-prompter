@@ -1,5 +1,10 @@
 # Patch Prompter
 
+| | |
+| --- | --- |
+|Author: | Cameron Browning |
+|Last Updated: | 08/14/2025 |
+
 # Overview
 Patch Prompter is a node-based workflow for generating text and image-based AI prompts. 
 
@@ -23,6 +28,14 @@ The Use Case for Patch Prompter is for a Creative Director who is looking for a 
 7. Stretch goal: Creative Directors can provide plain english descriptions of the project they're on, and receive suggested prompt components using RAG.
 
 By using a system like this, the prompt data is always saved, easily accessible, including the details about what genAI model is used. The Patch Prompter features help with new improvements, but the prompt and model metadata should allow others not using Patch Prompter to recreate similar images using the basic ChatGPT UI as well.
+
+## Prototype and Vibe-Coded Example
+
+![animation](anim.gif)
+
+Rough-and-ready prototype can be found [here](prototype/)
+
+
 
 # AI Features to Be Implemented (for MVP v0.1)
 - Prompt Engineering
@@ -52,16 +65,112 @@ The base system will utilize Repl.it for building out the main back-end API and 
 
 
 # Example Prompts & Expected Outputs
-- Include 1–2 sample prompts and describe the kind of responses your app would generate.
-- Highlight any structured output or formatting strategies.
+
+Reference Point 1 (from [PromptHero](https://prompthero.com/guides/chatgpt-json-guide/))
+
+Prompt:
+```json
+{
+  "title": "Clear Iridescent Glass Form",
+  "viewAngle": "Orthographic straight-on",
+  "background": {
+    "color": "#ffffff",
+    "lighting": "Soft top studio light"
+  },
+  "materialsAndTextures": [
+    { "type": "Transparent glass", "description": "Rounded edges with internal glow" },
+    { "type": "Iridescent core", "colors": ["#f8e1ff", "#dff8ff", "#fff6d2", "#ebd4ff"] }
+  ],
+  "lighting": {
+    "reflections": "Highlight edges",
+    "shadow": "Soft drop below"
+  }
+}
+
+```
+
+Output:
+![Clear Irridescent Glass Form](ChatGPT-Image-Apr-4-2025-11_46_34-AM.jpeg)
+
+Suggested UI for Prompt Patcher:
+![Ref 1](ref1.jpg)
+
+
+Reference Point 2 (from [@egeberkina on Twitter](https://x.com/egeberkina/status/1936399147088961705))
+
+Prompt:
+```json
+{
+  "style_name": "Transparent Studio Render",
+  "visual_rules": {
+    "form": {
+      "shape": "preserve original object shape",
+      "outline": "no outlines, use smooth geometry transitions and bevels"
+    },
+    "lighting": {
+      "style": "studio-style 3-point lighting or soft HDRI setup",
+      "highlight": "subtle specular highlights for semi-matte plastic or coated surfaces",
+      "shadow": "soft drop shadow directly beneath the object, cast on a translucent floor plane"
+    },
+    "texture": {
+      "surface": "smooth or lightly textured based on object, clean shader setup with minimal noise",
+      "branding": "bold and high-contrast, treated as printed decals or sticker-style labels"
+    },
+    "material": {
+      "finish": "semi-matte or satin shader, mimicking printed plastic or coated materials"
+    },
+    "color_handling": {
+      "strategy": "make the object's primary color the focal point",
+      "enhancement": "slightly boosted saturation and contrast for clean product visualization"
+    },
+    "background": {
+      "type": "fully transparent (alpha channel)",
+      "shadow": "optional soft drop shadow directly beneath the object to ground it visually"
+    }
+  },
+  "rendering": {
+    "camera_angle": "centered front view or slightly elevated for dimensional clarity",
+    "depth_of_field": "neutral or slightly shallow to keep object fully sharp",
+    "background_blur": "none, background remains transparent"
+  }
+}
+```
+
+Output:
+![Transparent Studio Render](Gt94tm4aAAAz4ep.jpg)
+
+Suggested UI for Prompt Patcher:
+![Ref 2](ref2.jpg)
+
+## Other Useful Output Structures
+
+1. Image batches
+    - Multiple images, generated with either the same prompt with different seeds, or with provided variations on prompt components.
+2. Color Picker(s)
+    - English colors editable with Hex, RGB, HSV pickers.
+3. Image Input Relationships
+    - Save input image references with image outputs
 
 # Evaluation Strategy
-- Briefly describe how you would assess your system’s effectiveness.
-- Include any metrics or evaluation methods you would use.
+
+## Output Metrics
+The system will provide a human-in-the-loop structure where the quality of the output is measured by the engagement of users. Since artists tend to output many images in a given session, the metadata on each image will be as follows:
+
+1. Upvotes
+2. Downvotes
+3. Deletes
+4. Downloads
+5. Report/Flag
+
+Upvotes and Downloads will cascade down to all prompt components, raising their profile, and adding them to a "best prompts" suggestions.
+
+Downvotes and Deletes will lower the prompt components.
+
+Reporting and Flagging may add a visual indicator on prompt components warning users (but not censoring them)
+
+## UX Success Metrics
+The simple measurement of success will be if artists find the app more useful than the ChatGPT or other similar interfaces like Krea, which they already have access to. If usage is consistent within a limited beta after 1, 2, 4 weeks, new releases will be planned. If usage falls off, a wider release will be planned with any sharing features or proprietary generations eliminated, with users to provide their own OpenAI key. If it succeeds there with outside artists, an audience pivot will be considered.
 
 # Observability Plan
-- Note how you would track performance, errors, or usage patterns over time.
+Observability is built-in to the human-in-the-loop feedback design proposed. For more granular observability, Langsmith will be used to provide more granular observation of all the generated images, across all users. This may require a bit more structure in the metadata with the inputs and outputs than a typical app, but will be highly valuable to observe any unique or trending behaviors with users.
 
-# Link to Proposal
-- Upload your completed proposal as a README.md file in a public GitHub or BitBucket repo.
-- Submit the link through the MBA Center under Week 7 - Project Week.
