@@ -204,4 +204,4 @@ Suggested UI for Prompt Patcher:
 Patch Prompter is **Figma for AI prompts** — a shareable, visual, feedback-driven system to make creative AI work faster, better, and more consistent. It keeps the artistry, adds observability, and builds a living library of *what works*.
 
 
-*Note: this proposal was written by Cameron Browning without AI assistance 8/11–8/14, 2025, and edited by ChatGPT 5 on 8/14/2025. The edited content was reviewed and approved by the author. You can find [the unedited version here](https://github.com/camb416/patch-prompter/tree/human-only)*
+*Note: this proposal was written by Cameron Browning without AI assistance 8/11–8/14, 2025, and edited by ChatGPT 5 on 8/14/2025 ([prompt](edit-prompt.md)). The edited content was reviewed and approved by the author. You can find [the unedited version here](https://github.com/camb416/patch-prompter/tree/human-only)*

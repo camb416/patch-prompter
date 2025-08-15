@@ -1,6 +1,6 @@
 # Patch Prompter Prototype
 
-## *Disclaimer: this prototype is vibe-coded to all hell. It was prompted by Cameron Browning, who made sure to not include API keys, but beyond that, read, run or look at this at your own risk, human*
+## *Disclaimer: this prototype is vibe-coded to all hell. It was prompted by Cameron Browning using [REQUIREMENTS.md](REQUIREMENTS.md). I made sure to not include API keys, but beyond that, read, run or look at this at your (and my) own risk.*
 
 A powerful node-based visual editor for creating AI-generated images with custom styling presets.
 
